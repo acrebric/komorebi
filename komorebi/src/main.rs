@@ -229,7 +229,7 @@ fn main() -> Result<()> {
     if !opts.await_configuration && !INITIAL_CONFIGURATION_LOADED.load(Ordering::SeqCst) {
         INITIAL_CONFIGURATION_LOADED.store(true, Ordering::SeqCst);
     };
-
+// 
     if let Some(port) = opts.tcp_port {
         listen_for_commands_tcp(wm.clone(), port);
     }
